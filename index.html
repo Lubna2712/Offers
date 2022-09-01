@@ -146,9 +146,18 @@
     .navWrapper {
       width: 100%;
       overflow-x: scroll;
+      flex-wrap: nowrap;
     }
 
-    .navWrapper li {
+    .navWrapper .container {
+      padding-left: 0;
+    }
+
+    .navWrapper .nav-tabs {
+      flex-wrap: nowrap;
+    }
+
+    .navWrapper .nav-tabs li {
       min-width: fit-content;
     }
   }
