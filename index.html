@@ -27,6 +27,10 @@
     list-style-type: none;
     display: flex;
     margin-bottom: 0;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  .nav-tabs {
     border-left: 1px solid #d9d9d9;
   }
 
@@ -128,6 +132,10 @@
     text-decoration: none;
   }
 
+  .nav-tabs {
+    border-bottom: 0 !important;
+  }
+
   @media screen and (max-width: 768px) {
     .offerWrapper {
       grid-template-columns: 1fr;
@@ -150,93 +158,231 @@
   <div class="heroSection">
     Offers Heading
   </div>
-  <div class="navContainer">
-    <div class="container">
-      <ul class="navWrapper">
-        <li class="">
-          <a class="active" aria-current="page" href="#">Dummy Text</a>
-        </li>
-        <li class="">
-          <a class="" href="#">Dummy Text</a>
-        </li>
-        <li class="">
-          <a class="" href="#">Dummy Text</a>
-        </li>
-        <li class="">
-          <a class="" href="#">Dummy Text</a>
-        </li>
-        <li class="">
-          <a class="" href="#">Dummy Text</a>
-        </li>
-        <li class="">
-          <a class="" href="#">Dummy Text</a>
-        </li>
-        <li class="">
-          <a class="" href="#">Dummy Text</a>
-        </li>
-        <li class="">
-          <a class="" href="#">Dummy Text</a>
-        </li>
-        <li class="">
-          <a class="" href="#">Dummy Text</a>
-        </li>
-      </ul>
+  <div>
+    <div class="navWrapper">
+      <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class=" active" id="tab1" data-toggle="tab" href="#tab1-view" role="tab" aria-controls="tab1-view"
+              aria-selected="true">Sanitaryware & Bath fittings</a>
+          </li>
+          <li class="nav-item">
+            <a class="" id="tab2" data-toggle="tab" href="#tab2-view" role="tab" aria-controls="tab2-view"
+              aria-selected="false">Electricals & Lighting</a>
+          </li>
+          <li class="nav-item">
+            <a class="" id="tab3" data-toggle="tab" href="#tab3-view" role="tab" aria-controls="tab3-view"
+              aria-selected="false">Tiles & Flooring</a>
+          </li>
+          <li class="nav-item">
+            <a class="" id="tab4" data-toggle="tab" href="#tab4-view" role="tab" aria-controls="tab4-view"
+              aria-selected="false">Wooden Material</a>
+          </li>
+          <li class="nav-item">
+            <a class="" id="tab5" data-toggle="tab" href="#tab5-view" role="tab" aria-controls="tab5-view"
+              aria-selected="false">Paints & Surface care</a>
+          </li>
+          <li class="nav-item">
+            <a class="" id="tab6" data-toggle="tab" href="#tab6-view" role="tab" aria-controls="tab6-view"
+              aria-selected="false">Hardware tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="" id="tab7" data-toggle="tab" href="#tab7-view" role="tab" aria-controls="tab7-view"
+              aria-selected="false">Modular kitchen</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <p class="mainHeading">Lorem ipsum is a piece of text that holds the place of real content</p>
-    <div class="offerWrapper">
-      <div class="offerCard">
-        <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
-        <div class="offerBody">
-          <div class="offerHead">
-            <h6 class="offerTitle mb-0">Flat 50% OFF (up to Rs.1,600)</h6>
-            <p class="offerText">Coupon Code: HIPPO</p>
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
-            <div>
-              <h6 class="valText mb-0">Validity:</h6>
-              <h6 class="offerValid mb-0">Aug 30, 2022</h6>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="tab1-view" role="tabpanel" aria-labelledby="tab1">
+        <div class="container">
+          <p class="mainHeading">Lorem ipsum is a piece of text that holds the place of real content</p>
+          <div class="offerWrapper">
+            <div class="offerCard">
+              <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
+              <div class="offerBody">
+                <div class="offerHead">
+                  <h6 class="offerTitle mb-0">Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-
+                  </h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="valText mb-0">Validity:</h6>
+                    <h6 class="offerValid mb-0">Aug 31, 2022</h6>
+                  </div>
+                  <div>
+                    <a href="#" class="buttonPrimary">View Details</a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <a href="#" class="buttonPrimary">View Details</a>
+            <div class="offerCard">
+              <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
+              <div class="offerBody">
+                <div class="offerHead">
+                  <h6 class="offerTitle mb-0">Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-
+                  </h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="valText mb-0">Validity:</h6>
+                    <h6 class="offerValid mb-0">Aug 31, 2022</h6>
+                  </div>
+                  <div>
+                    <a href="#" class="buttonPrimary">View Details</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="offerCard">
-        <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
-        <div class="offerBody">
-          <div class="offerHead">
-            <h6 class="offerTitle mb-0">Flat 50% OFF (up to Rs.1,600)</h6>
-            <p class="offerText">Coupon Code: HIPPO</p>
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
-            <div>
-              <h6 class="valText mb-0">Validity:</h6>
-              <h6 class="offerValid mb-0">Aug 30, 2022</h6>
-            </div>
-            <div>
-              <a href="#" class="buttonPrimary">View Details</a>
+      <div class="tab-pane fade" id="tab2-view" role="tabpanel" aria-labelledby="tab2">
+        <div class="container">
+          <p class="mainHeading">Lorem ipsum is a piece of text that holds the place of real content</p>
+          <div class="offerWrapper">
+            <div class="offerCard">
+              <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
+              <div class="offerBody">
+                <div class="offerHead">
+                  <h6 class="offerTitle mb-0">Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-
+                  </h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="valText mb-0">Validity:</h6>
+                    <h6 class="offerValid mb-0">Aug 31, 2022</h6>
+                  </div>
+                  <div>
+                    <a href="#" class="buttonPrimary">View Details</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="offerCard">
-        <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
-        <div class="offerBody">
-          <div class="offerHead">
-            <h6 class="offerTitle mb-0">Flat 50% OFF (up to Rs.1,600)</h6>
-            <p class="offerText">Coupon Code: HIPPO</p>
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
-            <div>
-              <h6 class="valText mb-0">Validity:</h6>
-              <h6 class="offerValid mb-0">Aug 30, 2022</h6>
+      <div class="tab-pane fade" id="tab3-view" role="tabpanel" aria-labelledby="tab3">
+        <div class="container">
+          <p class="mainHeading">Lorem ipsum is a piece of text that holds the place of real content</p>
+          <div class="offerWrapper">
+            <div class="offerCard">
+              <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
+              <div class="offerBody">
+                <div class="offerHead">
+                  <h6 class="offerTitle mb-0">Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-
+                  </h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="valText mb-0">Validity:</h6>
+                    <h6 class="offerValid mb-0">Aug 31, 2022</h6>
+                  </div>
+                  <div>
+                    <a href="#" class="buttonPrimary">View Details</a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <a href="#" class="buttonPrimary">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab4-view" role="tabpanel" aria-labelledby="tab4">
+        <div class="container">
+          <p class="mainHeading">Lorem ipsum is a piece of text that holds the place of real content</p>
+          <div class="offerWrapper">
+            <div class="offerCard">
+              <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
+              <div class="offerBody">
+                <div class="offerHead">
+                  <h6 class="offerTitle mb-0">Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-
+                  </h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="valText mb-0">Validity:</h6>
+                    <h6 class="offerValid mb-0">Aug 31, 2022</h6>
+                  </div>
+                  <div>
+                    <a href="#" class="buttonPrimary">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab5-view" role="tabpanel" aria-labelledby="tab5">
+        <div class="container">
+          <p class="mainHeading">Lorem ipsum is a piece of text that holds the place of real content</p>
+          <div class="offerWrapper">
+            <div class="offerCard">
+              <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
+              <div class="offerBody">
+                <div class="offerHead">
+                  <h6 class="offerTitle mb-0">Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-
+                  </h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="valText mb-0">Validity:</h6>
+                    <h6 class="offerValid mb-0">Aug 31, 2022</h6>
+                  </div>
+                  <div>
+                    <a href="#" class="buttonPrimary">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab6-view" role="tabpanel" aria-labelledby="tab6">
+        <div class="container">
+          <p class="mainHeading">Lorem ipsum is a piece of text that holds the place of real content</p>
+          <div class="offerWrapper">
+            <div class="offerCard">
+              <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
+              <div class="offerBody">
+                <div class="offerHead">
+                  <h6 class="offerTitle mb-0">Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-
+                  </h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="valText mb-0">Validity:</h6>
+                    <h6 class="offerValid mb-0">Aug 31, 2022</h6>
+                  </div>
+                  <div>
+                    <a href="#" class="buttonPrimary">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab7-view" role="tabpanel" aria-labelledby="tab7">
+        <div class="container">
+          <p class="mainHeading">Lorem ipsum is a piece of text that holds the place of real content</p>
+          <div class="offerWrapper">
+            <div class="offerCard">
+              <img src="./images/offers-lighting.webp" class="card-img-top" alt="Offer Image" height="200px" />
+              <div class="offerBody">
+                <div class="offerHead">
+                  <h6 class="offerTitle mb-0">Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-
+                  </h6>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="valText mb-0">Validity:</h6>
+                    <h6 class="offerValid mb-0">Aug 31, 2022</h6>
+                  </div>
+                  <div>
+                    <a href="#" class="buttonPrimary">View Details</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
