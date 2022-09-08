@@ -1,421 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700\u0026display=swap"
-      rel="stylesheet"
-    />
-    <title>Offers Template</title>
-  </head>
-  <style>
-    body {
-      font-family: Noto Sans, sans-serif !important;
-      line-height: 1.5 !important;
-      letter-spacing: 0.01071em;
-      font-size: 1rem !important;
-    }
-    .heroSection {
-      padding: 23px 0;
-      font-size: 24px;
-      text-align: center;
-      color: white;
-      background-color: #1e9fbd;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700\u0026display=swap"
+    rel="stylesheet" />
+  <title>Offers Template</title>
+</head>
+<style>
+  body {
+    font-family: Noto Sans, sans-serif !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.01071em;
+    font-size: 1rem !important;
+  }
+
+  .heroSection {
+    padding: 23px 0;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    background-color: #1e9fbd;
+  }
+
+  .navWrapper {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 0;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  .offer-tabs {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    min-height: 60px;
+    margin-bottom: 0;
+  }
+
+  .offer-tabs .active {
+    color: #f58020;
+  }
+
+  .offer-tabs li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.36);
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .navWrapper li a.active {
+    background: none repeat scroll 0 0 #fff;
+    border-top: 4px solid #ff5d00;
+    color: #000 !important;
+    padding: 7px 12px 10px !important;
+  }
+
+  .navWrapper li {
+    border-right: 1px solid #d9d9d9;
+  }
+
+  .navContainer {
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  .mainHeading {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 20px;
+    color: #333;
+  }
+
+  .offerCard {
+    box-shadow: 0 0 5px 0 rgb(50 50 50 / 10%);
+  }
+
+  .offerCard:hover {
+    box-shadow: 0 0 5px 0 rgb(50 50 50 / 40%);
+  }
+
+  .offerWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    margin-top: 35px;
+    margin-bottom: 40px;
+  }
+
+  .offerBody {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .offerTitle {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .offerText,
+  .valText {
+    color: #878787;
+    font-size: 12px;
+  }
+
+  .offerText {
+    margin-top: 5px;
+  }
+
+  .offerValid {
+    font-size: 12px;
+    color: #333;
+  }
+
+  .offerHead {
+    min-height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .buttonPrimary {
+    border-radius: 8px;
+    background-color: #f58020;
+    color: #ffffff;
+    font-size: 12px;
+    height: 45px;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    border: 0;
+    font-weight: 700;
+    padding: 0 15px;
+    text-transform: uppercase;
+  }
+
+  .buttonPrimary:hover {
+    background-color: #f58020;
+    text-decoration: none;
+  }
+
+  .nav-tabs {
+    border-bottom: 0 !important;
+  }
+
+  .Header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
+  }
+
+  .Header_container {
+    min-height: 95px;
+    background: #fff;
+    padding: 0 8px;
+    -webkit-box-shadow: 0 4px 6px rgb(0 0 0 / 16%);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 16%);
+    width: 100%;
+  }
+
+  .Header_container .Header_main {
+    margin-top: 12px;
+    min-height: 50px;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+  }
+
+  .storeIconContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .storeIcon {
+    height: 17px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .storeIcon+span {
+    color: #0000008a;
+    font-size: 12px;
+  }
+
+  .Header_logo {
+    object-fit: contain;
+    cursor: pointer;
+    width: 67px;
+    height: 32px;
+  }
+
+  .tab-content {
+    margin-top: 145px;
+  }
+
+  @media screen and (min-width: 991px) {
+    .Header_logo {
+      width: 120px;
+      height: 40px;
     }
 
-    .navWrapper {
-      padding-left: 0;
-      list-style-type: none;
-      display: flex;
-      margin-bottom: 0;
-      border-bottom: 1px solid #d9d9d9;
-    }
-    .offer-tabs {
+    .Header {
+      z-index: 1001;
       display: -webkit-flex;
       display: -moz-box;
       display: flex;
-      -webkit-justify-content: space-between;
-      -moz-box-pack: justify;
-      justify-content: space-between;
+      -webkit-justify-content: center;
+      -moz-box-pack: center;
+      justify-content: center;
       -webkit-align-items: center;
       -moz-box-align: center;
       align-items: center;
-      list-style-type: none;
-      padding: 0;
-      min-height: 60px;
-      margin-bottom: 0;
-    }
-    .offer-tabs .active {
-      color: #f58020;
-    }
-
-    .offer-tabs li a {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.36);
-      font-size: 13px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .navWrapper li a.active {
-      background: none repeat scroll 0 0 #fff;
-      border-top: 4px solid #ff5d00;
-      color: #000 !important;
-      padding: 7px 12px 10px !important;
-    }
-
-    .navWrapper li {
-      border-right: 1px solid #d9d9d9;
-    }
-
-    .navContainer {
-      border-bottom: 1px solid #d9d9d9;
-    }
-
-    .mainHeading {
-      font-size: 18px;
-      margin-bottom: 0;
-      margin-top: 20px;
-      color: #333;
-    }
-
-    .offerCard {
-      box-shadow: 0 0 5px 0 rgb(50 50 50 / 10%);
-    }
-
-    .offerCard:hover {
-      box-shadow: 0 0 5px 0 rgb(50 50 50 / 40%);
-    }
-
-    .offerWrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 30px;
-      margin-top: 35px;
-      margin-bottom: 40px;
-    }
-
-    .offerBody {
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .offerTitle {
-      font-size: 14px;
-      color: #333;
-    }
-
-    .offerText,
-    .valText {
-      color: #878787;
-      font-size: 12px;
-    }
-
-    .offerText {
-      margin-top: 5px;
-    }
-
-    .offerValid {
-      font-size: 12px;
-      color: #333;
-    }
-
-    .offerHead {
-      min-height: 60px;
-      margin-bottom: 10px;
-    }
-
-    .buttonPrimary {
-      border-radius: 8px;
-      background-color: #f58020;
-      color: #ffffff;
-      font-size: 12px;
-      height: 45px;
-      width: 100%;
-      display: grid;
-      place-content: center;
-      border: 0;
-      font-weight: 700;
-      padding: 0 15px;
-      text-transform: uppercase;
-    }
-
-    .buttonPrimary:hover {
-      background-color: #f58020;
-      text-decoration: none;
-    }
-
-    .nav-tabs {
-      border-bottom: 0 !important;
-    }
-    .Header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      background-color: #fff;
-      z-index: 999;
     }
 
     .Header_container {
-      min-height: 95px;
-      background: #fff;
-      padding: 0 8px;
-      -webkit-box-shadow: 0 4px 6px rgb(0 0 0 / 16%);
-      box-shadow: 0 4px 6px rgb(0 0 0 / 16%);
+      display: -ms-grid;
+      display: grid;
+      max-width: 1366px;
+      padding: 0 44px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .offerWrapper {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      margin-top: 20px;
+    }
+
+    .navWrapper {
       width: 100%;
-    }
-    .Header_container .Header_main {
-      margin-top: 12px;
-      min-height: 50px;
-      display: -webkit-flex;
-      display: -moz-box;
-      display: flex;
-      -webkit-justify-content: space-between;
-      -moz-box-pack: justify;
-      justify-content: space-between;
-      -webkit-align-items: center;
-      -moz-box-align: center;
-      align-items: center;
-    }
-    .storeIconContainer {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .storeIcon {
-      height: 17px;
-      margin: auto;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    .storeIcon + span {
-      color: #0000008a;
-      font-size: 12px;
+      overflow-x: scroll;
+      flex-wrap: nowrap;
     }
 
-    .Header_logo {
-      object-fit: contain;
-      cursor: pointer;
-      width: 67px;
-      height: 32px;
-    }
-    .tab-content {
-      margin-top: 145px;
-    }
-    @media screen and (min-width: 991px) {
-      .Header_logo {
-        width: 120px;
-        height: 40px;
-      }
-      .Header {
-        z-index: 1001;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: flex;
-        -webkit-justify-content: center;
-        -moz-box-pack: center;
-        justify-content: center;
-        -webkit-align-items: center;
-        -moz-box-align: center;
-        align-items: center;
-      }
-      .Header_container {
-        display: -ms-grid;
-        display: grid;
-        max-width: 1366px;
-        padding: 0 44px;
-      }
+    .navWrapper .container {
+      padding-left: 0;
     }
 
-    @media screen and (max-width: 768px) {
-      .offerWrapper {
-        grid-template-columns: 1fr;
-        grid-gap: 20px;
-        margin-top: 20px;
-      }
-
-      .navWrapper {
-        width: 100%;
-        overflow-x: scroll;
-        flex-wrap: nowrap;
-      }
-
-      .navWrapper .container {
-        padding-left: 0;
-      }
-
-      .navWrapper .nav-tabs {
-        flex-wrap: nowrap;
-      }
-
-      .navWrapper .nav-tabs li {
-        min-width: fit-content;
-      }
+    .navWrapper .nav-tabs {
+      flex-wrap: nowrap;
     }
-  </style>
 
-  <body>
-    <header class="Header">
-      <nav class="Header_container">
-        <div class="Header_main">
-          <div class="">
-            <div class="d-block d-md-block d-lg-none p-0">
-              <img
-                src="	https://www.hippostores.com/images/home_page/header.webp"
-                class="Header_logo"
-                alt="Hippo Logo Mobile"
-                title=""
-              />
-            </div>
-            <div class="d-none d-md-none d-lg-block p-0">
-              <img
-                src="	https://www.hippostores.com/images/home_page/mobileheader.webp"
-                class="Header_logo"
-                alt="Hippo Logo Desktop"
-              />
-            </div>
+    .navWrapper .nav-tabs li {
+      min-width: fit-content;
+    }
+  }
+</style>
+
+<body>
+  <header class="Header">
+    <nav class="Header_container">
+      <div class="Header_main">
+        <div class="">
+          <div class="d-block d-md-block d-lg-none p-0">
+            <img src="	https://www.hippostores.com/images/home_page/header.webp" class="Header_logo"
+              alt="Hippo Logo Mobile" title="" />
           </div>
-          <div>
-            <div>
-              <span class="pointer"
-                ><a href="https://www.hippostores.com/contactus"
-                  ><div class="storeIconContainer">
-                    <img
-                      src="	https://www.hippostores.com/images/mobile/Icon awesome-store.svg"
-                      class="storeIcon"
-                      alt="Store icon"
-                      title=""
-                    /><span>Store Locator</span>
-                  </div></a
-                ></span
-              >
-            </div>
+          <div class="d-none d-md-none d-lg-block p-0">
+            <img src="	https://www.hippostores.com/images/home_page/mobileheader.webp" class="Header_logo"
+              alt="Hippo Logo Desktop" />
           </div>
         </div>
-        <ul class="offer-tabs">
-          <li class="nav-item">
-            <a class="active" href="#all">All</a>
-          </li>
-          <li class="nav-item">
-            <a class="" href="#sanitary-ware-and-bath-fittings-sbf"
-              >Sanitaryware and Bath Fittings</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="" href="#electrical-lighting-elt"
-              >Electricals and Lighting</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="" href="#tiles-and-flooring-tfl">Tiles and Flooring</a>
-          </li>
-          <li class="nav-item">
-            <a class="" href="#wood-materials-wmt">Wooden Material</a>
-          </li>
-          <li class="nav-item">
-            <a class="" href="#paints-and-surface-care-psc"
-              >Paints and Surface Care</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="" href="#structural-materials-smt">Structural Material</a>
-          </li>
-          <li class="nav-item">
-            <a class="" href="#hardware-tools">Hardware and Tools</a>
-          </li>
-          <li class="nav-item">
-            <a class="" href="#modular-kitchen">Modular Kitchen</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="tab-content">
-      <div class="container">
-        <p class="mainHeading">
-          Lorem ipsum is a piece of text that holds the place of real content
-        </p>
-        <div class="offerWrapper" id="myTabContent"></div>
+        <div>
+          <div>
+            <span class="pointer"><a href="https://www.hippostores.com/contactus">
+                <div class="storeIconContainer">
+                  <img src="	https://www.hippostores.com/images/mobile/Icon awesome-store.svg" class="storeIcon"
+                    alt="Store icon" title="" /><span>Store Locator</span>
+                </div>
+              </a></span>
+          </div>
+        </div>
       </div>
+      <ul class="offer-tabs">
+        <li class="nav-item">
+          <a class="active" href="#all">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#sanitary-ware-and-bath-fittings-sbf">Sanitaryware and Bath Fittings</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#electrical-lighting-elt">Electricals and Lighting</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#tiles-and-flooring-tfl">Tiles and Flooring</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#wood-materials-wmt">Wooden Material</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#paints-and-surface-care-psc">Paints and Surface Care</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#structural-materials-smt">Structural Material</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#hardware-tools">Hardware and Tools</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#modular-kitchen">Modular Kitchen</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="tab-content">
+    <div class="container">
+      <p class="mainHeading">
+        Lorem ipsum is a piece of text that holds the place of real content
+      </p>
+      <div class="offerWrapper" id="myTabContent"></div>
     </div>
-  </body>
+  </div>
+</body>
 
-  <!-- JavaScript Bundle with Popper -->
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    const navItems = document.querySelectorAll(".offer-tabs .nav-item a");
-    var div = document.getElementById("myTabContent"),
-      frag = document.createDocumentFragment(),
-      data = [
-        {
-          offerImg: "./images/offers-lighting.webp",
-          offerTitle:
-            "Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-",
-          offerValidity: "31/08/2022",
-          offerDetails: "detail.html",
-          offerCategory: "Sanitaryware and Bath Fittings",
-        },
-        {
-          offerImg: "./images/offers-lighting.webp",
-          offerTitle:
-            "Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-",
-          offerValidity: "31/08/2022",
-          offerDetails: "detail.html",
-          offerCategory: "Electricals & Lighting",
-        },
-        {
-          offerImg: "./images/offers-lighting.webp",
-          offerTitle: "Tiles & Flooring",
-          offerValidity: "31/08/2022",
-          offerDetails: "detail.html",
-          offerCategory: "Tiles & Flooring",
-        },
-        {
-          offerImg: "./images/offers-lighting.webp",
-          offerTitle: "Tiles & Flooring",
-          offerValidity: "31/08/2022",
-          offerDetails: "detail.html",
-          offerCategory: "Tiles & Flooring",
-        },
-      ];
-    function filterData(tab) {
-      div.innerHTML = "";
-      if (tab === "All") {
-        filteredData = data;
-      } else {
-        filteredData = data.filter((d) => d.offerCategory === tab);
-      }
+<!-- JavaScript Bundle with Popper -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+  const navItems = document.querySelectorAll(".offer-tabs .nav-item a");
+  var div = document.getElementById("myTabContent"),
+    frag = document.createDocumentFragment(),
+    data = [
+      {
+        offerImg: "./images/offers-lighting.webp",
+        offerTitle:
+          "Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-",
+        offerValidity: "31/08/2022",
+        offerDetails: "detail.html",
+        offerCategory: "Sanitaryware and Bath Fittings",
+      },
+      {
+        offerImg: "./images/offers-lighting.webp",
+        offerTitle:
+          "Upto 70% off on Switches subject to purchase of Switches of Rs.5,000/-",
+        offerValidity: "31/08/2022",
+        offerDetails: "detail.html",
+        offerCategory: "Electricals & Lighting",
+      },
+      {
+        offerImg: "./images/offers-lighting.webp",
+        offerTitle: "Tiles & Flooring",
+        offerValidity: "31/08/2022",
+        offerDetails: "detail.html",
+        offerCategory: "Tiles & Flooring",
+      },
+      {
+        offerImg: "./images/offers-lighting.webp",
+        offerTitle: "Tiles & Flooring",
+        offerValidity: "31/08/2022",
+        offerDetails: "detail.html",
+        offerCategory: "Tiles & Flooring",
+      },
+    ];
+  function filterData(tab) {
+    div.innerHTML = "";
+    if (tab === "All") {
+      filteredData = data;
+    } else {
+      filteredData = data.filter((d) => d.offerCategory === tab);
+    }
 
-      if (filteredData.length)
-        filteredData.forEach(function (v, i) {
-          let myDiv = document.createElement("div");
-          myDiv.innerHTML = `
+    if (filteredData.length)
+      filteredData.forEach(function (v, i) {
+        let myDiv = document.createElement("div");
+        myDiv.innerHTML = `
           <img
             src=${v.offerImg}
             class="card-img-top"
@@ -439,28 +416,29 @@
             </div>
           </div>
         `;
-          myDiv.cl;
-          frag.appendChild(myDiv).className = "offerCard";
-        });
-      else
-        frag.appendChild(document.createElement("h5")).innerHTML =
-          "No Offers Found";
-      return div.appendChild(frag);
-    }
-
-    let filteredData = data;
-    filterData("All");
-    console.log(navItems);
-    navItems.forEach((navItem) => {
-      navItem.addEventListener("click", (e) => {
-        document
-          .querySelector(".offer-tabs .active")
-          .classList.remove("active");
-        e.target.classList.add("active");
-        const selectedTab = e.target.textContent;
-        console.log(selectedTab);
-        filterData(selectedTab);
+        myDiv.cl;
+        frag.appendChild(myDiv).className = "offerCard";
       });
+    else
+      frag.appendChild(document.createElement("h5")).innerHTML =
+        "No Offers Found";
+    return div.appendChild(frag);
+  }
+
+  let filteredData = data;
+  filterData("All");
+  console.log(navItems);
+  navItems.forEach((navItem) => {
+    navItem.addEventListener("click", (e) => {
+      document
+        .querySelector(".offer-tabs .active")
+        .classList.remove("active");
+      e.target.classList.add("active");
+      const selectedTab = e.target.textContent;
+      console.log(selectedTab);
+      filterData(selectedTab);
     });
-  </script>
+  });
+</script>
+
 </html>
