@@ -5,29 +5,139 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700\u0026display=swap"
-    rel="stylesheet" />
+  <link rel="stylesheet" href="./Yatra.css" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700\u0026display=swap"
+    rel="stylesheet" />
   <title>Offer Detail</title>
 </head>
 <style>
-  .callActionWrapper {
+  body {
+    font-family: Noto Sans, sans-serif !important;
+    line-height: 1.5 !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.04071em;
+  }
+
+  .Header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
+  }
+
+  .Header_container {
+    min-height: 95px;
+    background: #fff;
+    padding: 0 8px;
+    -webkit-box-shadow: 0 4px 6px rgb(0 0 0 / 16%);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 16%);
+    width: 100%;
+  }
+
+  .Header_container .Header_main {
+    margin-top: 12px;
+    min-height: 50px;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+  }
+
+  .storeIconContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .storeIcon {
+    height: 17px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .storeIcon+span {
+    color: #0000008a;
+    font-size: 12px;
+  }
+
+  .Header_logo {
+    object-fit: contain;
+    cursor: pointer;
+    width: 67px;
+    height: 32px;
+  }
+
+  .offer-tabs {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    min-height: 60px;
+    margin-bottom: 0;
+  }
+
+  .offer-tabs .active {
+    color: #f58020;
+  }
+
+  .offer-tabs li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.36);
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .offerDetailsWrapper {
+    max-width: 1280px;
+    margin: 145px auto 0;
+  }
+
+  .buttonPrimary {
+    margin: 15px auto;
+    border-radius: 30px;
     background-color: #f58020;
-    padding: 80px 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-radius: 8px;
-  }
-
-  .btnOutlineWhite {
-    border-width: 2px;
-    border-color: #fff;
     color: #fff;
+    font-size: 12px;
+    height: 45px;
+    width: 256px;
+    display: grid;
+    place-content: center;
+    border: 0;
+    font-weight: 700;
+    padding: 0 15px;
+    text-transform: uppercase;
+    transition: 0.3s all ease-in-out;
   }
 
-  .cardWrapper {
+  .buttonPrimary:hover {
+    background-color: #f58020;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 5px 0 rgb(50 50 50 / 40%);
+  }
+
+  .offerDetailContainer .cardWrapper {
     border: 1px solid #d4d4d4;
     border-radius: 8px;
     box-shadow: 0 0 4px 0 #d4d4d4;
@@ -35,7 +145,7 @@
     margin-bottom: 50px;
   }
 
-  .cardTitle {
+  .offerDetailContainer .cardTitle {
     background: #fafafa;
     padding: 20px;
     font-size: 18px;
@@ -43,17 +153,17 @@
     color: #333;
   }
 
-  .cardContent {
+  .offerDetailContainer .cardContent {
     padding: 20px;
     color: #333;
     font-size: 16px;
   }
 
-  ul.cardContent {
+  .offerDetailContainer ul.cardContent {
     padding-left: 35px;
   }
 
-  ul.cardContent li {
+  .offerDetailContainer ul.cardContent li {
     margin-bottom: 10px;
   }
 
@@ -61,105 +171,192 @@
     height: 500px;
   }
 
-  .cardContent {
+  .offerDetailContainer .cardContent {
     margin-bottom: 0;
   }
 
   @media screen and (max-width: 768px) {
-    .callActionWrapper h2 {
-      margin-bottom: 30px !important;
-    }
-
-    .callActionWrapper {
-      padding: 40px 20px;
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-
     .heroImage img {
       height: 300px;
     }
 
-    .btnOutlineWhite {
-      margin-top: 30px;
+    .offerDetailContainer .cardWrapper {
+      margin-bottom: 30px;
     }
 
-    .cardWrapper {
+    .offerDetailsWrapper {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .buttonPrimary {
       margin-bottom: 30px;
+    }
+
+    .Header_container .Header_main {
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (min-width: 991px) {
+    .Header_logo {
+      width: 120px;
+      height: 40px;
+    }
+
+    .Header {
+      z-index: 1001;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: flex;
+      -webkit-justify-content: center;
+      -moz-box-pack: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -moz-box-align: center;
+      align-items: center;
+    }
+
+    .Header_container {
+      display: -ms-grid;
+      display: grid;
+      max-width: 1366px;
+      padding: 0 44px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .offer-tabs {
+      width: 100%;
+      overflow-x: scroll;
+      flex-wrap: nowrap;
+    }
+
+    .offer-tabs li {
+      min-width: fit-content;
+    }
+
+    .offer-tabs li:not(:first-child) {
+      padding-left: 15px;
     }
   }
 </style>
 
 <body>
-  <div class="heroImage">
-    <img src="./images/offers-lighting.webp" alt="Hero Section" width="100%">
-  </div>
-  <!-- Call To Action -->
-  <section class="container">
-    <div class="callActionWrapper">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <h2 class="text-white mb-0">Call To Action</h2>
-          <p class="text-white lead mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde eius ut autem
-            magnam, eaque aliquam neque est accusamus velit, cum placeat. Facere quaerat enim qui et odio itaque
-            consequuntur necessitatibus?</p>
+  <header class="Header">
+    <nav class="Header_container">
+      <div class="Header_main">
+        <div class="">
+          <div class="d-block d-md-block d-lg-none p-0">
+            <img src="	https://www.hippostores.com/images/home_page/header.webp" class="Header_logo"
+              alt="Hippo Logo Mobile" title="" />
+          </div>
+          <div class="d-none d-md-none d-lg-block p-0">
+            <img src="	https://www.hippostores.com/images/home_page/mobileheader.webp" class="Header_logo"
+              alt="Hippo Logo Desktop" />
+          </div>
         </div>
-        <div class="col-lg-4 text-lg-right">
-          <a href="" class="btn btnOutlineWhite">Download Now</a>
+        <div>
+          <div>
+            <span class="pointer"><a href="https://www.hippostores.com/contactus">
+                <div class="storeIconContainer">
+                  <img src="	https://www.hippostores.com/images/mobile/Icon awesome-store.svg" class="storeIcon"
+                    alt="Store icon" title="" /><span>Store Locator</span>
+                </div>
+              </a></span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Offer Description -->
-  <section class="container">
-    <div class="cardWrapper">
-      <h2 class="cardTitle">
-        Offer Heading
-      </h2>
-      <div class="cardContent">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur sapiente rem deleniti, facilis quae
-          perspiciatis doloremque fugit distinctio et porro voluptate.
-          <strong>Upto <span class="RupeeSign">Rs.</span>200 OFF on switches </strong>and
-          <strong>Upto <span class="RupeeSign">Rs.</span>100 OFF on Kohler, Hindware </strong>,
-          <strong>
-            15% OFF (max. <span class="RupeeSign">Rs.</span>1,000) on Bath products
-          </strong>
-          and
-          <strong>
-            Flat <span class="RupeeSign">Rs.</span>500 OFF on switches </strong>. Use promo code<strong>
-            HIPPOSWITCH</strong> to avail this offer.
-          This offer is valid <strong> till August 31, 2022</strong>.
-          Hurry! <a href="">Book now</a>.
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- Terms -->
-  <section class="container">
-    <div class="cardWrapper">
-      <h2 class="cardTitle">Terms and Conditions</h2>
-      <ul class="cardContent">
-        <li>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          <strong>August 18 - 31, 2022</strong>.
+      <ul class="offer-tabs">
+        <li class="nav-item">
+          <a class="active" href="/Offers/index.html#all">All</a>
         </li>
-        <li>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        <li class="nav-item">
+          <a class="" href="/Offers/index.html">Sanitaryware and Bath Fittings</a>
         </li>
-        <li>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          code <strong>HIPPOVAL</strong> to avail the discount.
+        <li class="nav-item">
+          <a class="" href="/Offers/index.html#electrical-lighting-elt">Electricals and Lighting</a>
         </li>
-        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae sequi pariatur tempore ipsum tenetur
-          commodi aliquam quia? Beatae dolor, corporis aliquam, quia perspiciatis at corrupti consequatur saepe
-          voluptatem, earum cumque.
+        <li class="nav-item">
+          <a class="" href="/Offers/index.html#tiles-and-flooring-tfl">Tiles and Flooring</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="/Offers/index.html#wood-materials-wmt">Wooden Material</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="/Offers/index.html#paints-and-surface-care-psc">Paints and Surface Care</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="/Offers/index.html#structural-materials-smt">Structural Material</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="/Offers/index.html#hardware-tools">Hardware and Tools</a>
+        </li>
+        <li class="nav-item">
+          <a class="" href="/Offers/index.html#modular-kitchen">Modular Kitchen</a>
         </li>
       </ul>
+    </nav>
+  </header>
+  <div class="offerDetailsWrapper">
+    <div class="heroImage">
+      <img src="./images/offers-lighting.webp" alt="Hero Section" width="100%" />
     </div>
-  </section>
+    <!-- Call To Action -->
+    <a href="" class="buttonPrimary">Download Now</a>
+    <!-- Offer Description -->
+    <section class="offerDetailContainer">
+      <div class="cardWrapper">
+        <h2 class="cardTitle">Offer Heading</h2>
+        <div class="cardContent">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequatur sapiente rem deleniti, facilis quae perspiciatis
+            doloremque fugit distinctio et porro voluptate.
+            <strong>Upto <span class="RupeeSign">Rs.</span>200 OFF on switches </strong>and
+            <strong>Upto <span class="RupeeSign">Rs.</span>100 OFF on Kohler,
+              Hindware </strong>,
+            <strong>
+              15% OFF (max. <span class="RupeeSign">Rs.</span>1,000) on Bath
+              products
+            </strong>
+            and
+            <strong>
+              Flat <span class="RupeeSign">Rs.</span>500 OFF on switches </strong>. Use promo code<strong>
+              HIPPOSWITCH</strong> to avail this
+            offer. This offer is valid <strong> till August 31, 2022</strong>.
+            Hurry! <a href="">Book now</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Terms -->
+    <section class="offerDetailContainer">
+      <div class="cardWrapper">
+        <h2 class="cardTitle">Terms and Conditions</h2>
+        <ul class="cardContent">
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            <strong>August 18 - 31, 2022</strong>.
+          </li>
+          <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. code
+            <strong>HIPPOVAL</strong> to avail the discount.
+          </li>
+          <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Recusandae sequi pariatur tempore ipsum tenetur commodi aliquam
+            quia? Beatae dolor, corporis aliquam, quia perspiciatis at
+            corrupti consequatur saepe voluptatem, earum cumque.
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
 </body>
 
 <!-- JavaScript Bundle with Popper -->
